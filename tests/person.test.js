@@ -5,7 +5,7 @@ import { Person } from '../src/person.js';
 import { assertNoComments } from '../utils/assert-no-comments.js';
 import { optional } from '../utils/optional.js';
 
-describe('User', () => {
+describe('Person', () => {
   beforeEach(() => {
     Person.count = 0;
     Person.totalWeight = 0;
