@@ -1,22 +1,27 @@
-import { it } from 'node:test';
-
-/**
- * @param {string} name
- * @param {(ctx:import('node:test').TestContext) => void} fn
- * @returns {void}
- */
-export function optional(name, fn) {
-  it(name, (ctx) => {
-    try {
-      fn(ctx);
-    } catch (error) {
-      if (error && error.message === 'Not implemented') {
-        ctx.skip();
-
-        return;
+export function optional(title, fn, isAsyncTest) {
+  if (isAsyncTest) {
+    it(title, function test(done) {
+      try {
+        fn.call(this, done);
+      } catch (err) {
+        if (err.message === 'Not implemented') {
+          this.test.skip();
+        } else {
+          throw err;
+        }
       }
-
-      throw error;
-    }
-  });
+    });
+  } else {
+    it(title, function test() {
+      try {
+        fn.call(this);
+      } catch (err) {
+        if (err.message === 'Not implemented') {
+          this.test.skip();
+        } else {
+          throw err;
+        }
+      }
+    });
+  }
 }

@@ -4,6 +4,9 @@ import { describe, mock } from 'node:test';
 import { Animal, Cat, Cow, Dog } from '../src/animal-prototype.js';
 import { assertNoComments } from '../utils/assert-no-comments.js';
 import { optional } from '../utils/optional.js';
+import { it } from 'mocha';
+
+it.optional = optional;
 
 function isClass(fn) {
   try {
@@ -18,7 +21,7 @@ function isClass(fn) {
 }
 
 describe('Animal prototype', () => {
-  optional(
+  it.optional(
     '"Animal" must be implemented as a constructor function, not a class',
     () => {
       const instance = new Animal();
@@ -26,7 +29,7 @@ describe('Animal prototype', () => {
     }
   );
 
-  optional(
+  it.optional(
     '"Dog" must be implemented as a constructor function, not a class',
     () => {
       const instance = new Dog();
@@ -34,7 +37,7 @@ describe('Animal prototype', () => {
     }
   );
 
-  optional(
+  it.optional(
     '"Cat" must be implemented as a constructor function, not a class',
     () => {
       const instance = new Cat();
@@ -42,7 +45,7 @@ describe('Animal prototype', () => {
     }
   );
 
-  optional(
+  it.optional(
     '"Cow" must be implemented as a constructor function, not a class',
     () => {
       const instance = new Cow();
@@ -50,7 +53,7 @@ describe('Animal prototype', () => {
     }
   );
 
-  optional(
+  it.optional(
     '"Dog" must have "makeSound" defined on prototype, not directly on object',
     () => {
       const dog1 = new Dog('Rex');
@@ -62,7 +65,7 @@ describe('Animal prototype', () => {
     }
   );
 
-  optional(
+  it.optional(
     '"Cat" must have "makeSound" defined on prototype, not directly on object',
     () => {
       const cat1 = new Cat('Whiskers');
@@ -74,7 +77,7 @@ describe('Animal prototype', () => {
     }
   );
 
-  optional(
+  it.optional(
     '"Cow" must have "makeSound" defined on prototype, not directly on object',
     () => {
       const cow1 = new Cow('Bessie');
@@ -86,7 +89,7 @@ describe('Animal prototype', () => {
     }
   );
 
-  optional(
+  it.optional(
     '"Animal" must have "makeSound" defined on prototype, not directly on object',
     () => {
       const animal1 = new Animal('Generic');
@@ -98,7 +101,7 @@ describe('Animal prototype', () => {
     }
   );
 
-  optional('Instances must return correct names and sounds', () => {
+  it.optional('Instances must return correct names and sounds', () => {
     const dog = new Dog('Rex');
     const cat = new Cat('Whiskers');
     const cow = new Cow('Bessie');
@@ -117,7 +120,7 @@ describe('Animal prototype', () => {
     assert.strictEqual(animal.makeSound(), 'Unknown sound');
   });
 
-  optional('Instances must have correct constructor', () => {
+  it.optional('Instances must have correct constructor', () => {
     const dog = new Dog('Rex');
     const cat = new Cat('Whiskers');
     const cow = new Cow('Bessie');
@@ -129,7 +132,7 @@ describe('Animal prototype', () => {
     assert.strictEqual(animal.constructor, Animal);
   });
 
-  optional('"Dog" must correctly inherit from Animal', () => {
+  it.optional('"Dog" must correctly inherit from Animal', () => {
     const originalCall = Animal.call;
     const originalApply = Animal.apply;
 
@@ -161,7 +164,7 @@ describe('Animal prototype', () => {
     assert.strictEqual(dog.isAnimal, true);
   });
 
-  optional('"Cat" must correctly inherit from Animal', () => {
+  it.optional('"Cat" must correctly inherit from Animal', () => {
     const originalCall = Animal.call;
     const originalApply = Animal.apply;
 
@@ -193,7 +196,7 @@ describe('Animal prototype', () => {
     assert.strictEqual(cat.isAnimal, true);
   });
 
-  optional('"Cow" must correctly inherit from Animal', () => {
+  it.optional('"Cow" must correctly inherit from Animal', () => {
     const originalCall = Animal.call;
     const originalApply = Animal.apply;
 
@@ -225,7 +228,7 @@ describe('Animal prototype', () => {
     assert.strictEqual(cow.isAnimal, true);
   });
 
-  optional('Prototypes are distinct objects', () => {
+  it.optional('Prototypes are distinct objects', () => {
     const animal = new Animal('animal');
     const cat = new Cat('cat');
     assert.notStrictEqual(Animal.prototype, Cat.prototype);
@@ -244,7 +247,7 @@ describe('Animal prototype', () => {
     assert.notStrictEqual(Cow.prototype, Dog.prototype);
   });
 
-  optional('should not contain commentaries', () => {
+  it.optional('should not contain commentaries', () => {
     const animal = new Animal('');
     const dog = new Dog('');
     const cat = new Cat('');
