@@ -85,7 +85,7 @@ However, PRs with the fixes or proposals are welcomed!
 **Answer**:
 
 ```sh
-node --test tests/<task-name>.test.js
+npx mocha test/<task-name>.test.js
 ```
 
 ---
