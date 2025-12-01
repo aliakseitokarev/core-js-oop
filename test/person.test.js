@@ -1,9 +1,11 @@
+import { beforeEach, describe, it } from 'mocha';
 import assert from 'node:assert';
-import { beforeEach, describe } from 'node:test';
 
 import { Person } from '../src/person.js';
 import { assertNoComments } from '../utils/assert-no-comments.js';
 import { optional } from '../utils/optional.js';
+
+it.optional = optional;
 
 describe('Person', () => {
   beforeEach(() => {

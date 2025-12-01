@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Core JS OOP",
   "scripts": {
-    "test": "npm run lint && node --test",
+    "test": "npm run lint && mocha",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "format": "prettier . --write"

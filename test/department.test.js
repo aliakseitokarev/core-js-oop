@@ -1,5 +1,5 @@
+import { describe, it } from 'mocha';
 import assert from 'node:assert';
-import { describe } from 'node:test';
 
 import {
   Department,
@@ -10,6 +10,8 @@ import {
 } from '../src/department.js';
 import { assertNoComments } from '../utils/assert-no-comments.js';
 import { optional } from '../utils/optional.js';
+
+it.optional = optional;
 
 describe('Department', () => {
   describe('Employee subclasses', () => {
