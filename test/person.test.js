@@ -95,6 +95,8 @@ describe('Person', () => {
   });
 
   it.optional('should not contain commentaries', () => {
+    new Person(0, 0);
+
     [Person.averageHeight, Person.averageWeight].forEach((fn) =>
       assertNoComments(fn)
     );
