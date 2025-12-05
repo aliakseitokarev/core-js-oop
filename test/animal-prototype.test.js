@@ -1,10 +1,10 @@
-import { describe, it } from 'mocha';
-import assert from 'node:assert';
-import { mock } from 'node:test';
+const { describe, it } = require('mocha');
+const assert = require('node:assert');
+const { mock } = require('node:test');
 
-import { Animal, Cat, Cow, Dog } from '../src/animal-prototype.js';
-import { assertNoComments } from '../utils/assert-no-comments.js';
-import { optional } from '../utils/optional.js';
+const { Animal, Cat, Cow, Dog } = require('../src/animal-prototype.js');
+const { assertNoComments } = require('../utils/assert-no-comments.js');
+const { optional } = require('../utils/optional.js');
 
 it.optional = optional;
 

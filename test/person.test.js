@@ -1,9 +1,9 @@
-import { beforeEach, describe, it } from 'mocha';
-import assert from 'node:assert';
+const { beforeEach, describe, it } = require('mocha');
+const assert = require('node:assert');
 
-import { Person } from '../src/person.js';
-import { assertNoComments } from '../utils/assert-no-comments.js';
-import { optional } from '../utils/optional.js';
+const { Person } = require('../src/person.js');
+const { assertNoComments } = require('../utils/assert-no-comments.js');
+const { optional } = require('../utils/optional.js');
 
 it.optional = optional;
 

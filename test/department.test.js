@@ -1,15 +1,15 @@
-import { describe, it } from 'mocha';
-import assert from 'node:assert';
+const { describe, it } = require('mocha');
+const assert = require('node:assert');
 
-import {
+const {
   Department,
   Developer,
   Employee,
   Intern,
   Manager,
-} from '../src/department.js';
-import { assertNoComments } from '../utils/assert-no-comments.js';
-import { optional } from '../utils/optional.js';
+} = require('../src/department.js');
+const { assertNoComments } = require('../utils/assert-no-comments.js');
+const { optional } = require('../utils/optional.js');
 
 it.optional = optional;
 

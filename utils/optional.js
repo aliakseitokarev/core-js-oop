@@ -1,4 +1,4 @@
-export function optional(title, fn, isAsyncTest) {
+function optional(title, fn, isAsyncTest) {
   if (isAsyncTest) {
     it(title, function test(done) {
       try {
@@ -25,3 +25,5 @@ export function optional(title, fn, isAsyncTest) {
     });
   }
 }
+
+module.exports = { optional };

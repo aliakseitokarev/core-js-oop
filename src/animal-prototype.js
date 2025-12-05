@@ -1,4 +1,6 @@
-import { throwNotImplementedError } from '../utils/throw-not-implemented-error.js';
+const {
+  throwNotImplementedError,
+} = require('../utils/throw-not-implemented-error.js');
 
 /**
  * @param {string} name - The name of the animal.
@@ -9,7 +11,7 @@ import { throwNotImplementedError } from '../utils/throw-not-implemented-error.j
  * - Must set "isAnimal" property to "true".
  * - Must have a "makeSound" method on the prototype that returns "'Unknown sound'".
  */
-export function Animal(/* name */) {
+function Animal(/* name */) {
   throwNotImplementedError();
 }
 
@@ -24,7 +26,7 @@ export function Animal(/* name */) {
  * - Instances must correctly inherit "isAnimal" from "Animal".
  * - Prototype must be distinct from other animals.
  */
-export function Dog(/* name */) {
+function Dog(/* name */) {
   throwNotImplementedError();
 }
 
@@ -39,7 +41,7 @@ export function Dog(/* name */) {
  * - Instances must correctly inherit "isAnimal" from "Animal".
  * - Prototype must be distinct from other animals.
  */
-export function Cat(/* name */) {
+function Cat(/* name */) {
   throwNotImplementedError();
 }
 
@@ -54,6 +56,8 @@ export function Cat(/* name */) {
  * - Instances must correctly inherit "isAnimal" from "Animal".
  * - Prototype must be distinct from other animals.
  */
-export function Cow(/* name */) {
+function Cow(/* name */) {
   throwNotImplementedError();
 }
+
+module.exports = { Animal, Dog, Cat, Cow };

@@ -14,7 +14,6 @@
   },
   "author": "ripetchor, MikAleinik",
   "license": "MIT",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/rolling-scopes-school/core-js-oop/issues"
   },

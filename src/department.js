@@ -1,4 +1,6 @@
-import { throwNotImplementedError } from '../utils/throw-not-implemented-error.js';
+const {
+  throwNotImplementedError,
+} = require('../utils/throw-not-implemented-error.js');
 
 /**
  * @abstract
@@ -6,7 +8,7 @@ import { throwNotImplementedError } from '../utils/throw-not-implemented-error.j
  * Represents any employee.
  * Do not modify this class.
  */
-export class Employee {
+class Employee {
   /**
    * @type {string}
    */
@@ -68,7 +70,7 @@ export class Employee {
 /**
  * Must correctly extend Employee.
  */
-export class Developer {
+class Developer {
   /**
    * @param {string} name - Developer name.
    * @param {number} salary - Base salary.
@@ -82,7 +84,7 @@ export class Developer {
 /**
  * Must correctly extend Employee.
  */
-export class Manager {
+class Manager {
   /**
    * @param {string} name - Manager name.
    * @param {number} salary - Base salary.
@@ -96,7 +98,7 @@ export class Manager {
 /**
  * Must correctly extend Employee.
  */
-export class Intern {
+class Intern {
   /**
    * @param {string} name - Intern name.
    * @param {number} salary - Intern salary.
@@ -109,7 +111,7 @@ export class Intern {
 /**
  * Represents a department that stores employees.
  */
-export class Department {
+class Department {
   /**
    * @type {Employee[]}
    */
@@ -170,3 +172,5 @@ export class Department {
     throwNotImplementedError();
   }
 }
+
+module.exports = { Employee, Developer, Manager, Intern, Department };

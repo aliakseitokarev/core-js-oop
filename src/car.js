@@ -1,6 +1,8 @@
-import { throwNotImplementedError } from '../utils/throw-not-implemented-error.js';
+const {
+  throwNotImplementedError,
+} = require('../utils/throw-not-implemented-error.js');
 
-export class Engine {
+class Engine {
   /**
    * @param {number} power
    */
@@ -35,7 +37,7 @@ export class Engine {
   }
 }
 
-export class Car {
+class Car {
   /**
    * @param {Engine} engine
    *
@@ -77,3 +79,5 @@ export class Car {
     throwNotImplementedError();
   }
 }
+
+module.exports = { Engine, Car };

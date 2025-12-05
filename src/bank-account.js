@@ -1,9 +1,11 @@
-import { throwNotImplementedError } from '../utils/throw-not-implemented-error.js';
+const {
+  throwNotImplementedError,
+} = require('../utils/throw-not-implemented-error.js');
 
 /**
  * Represents a bank account with private balance.
  */
-export class BankAccount {
+class BankAccount {
   /**
    * @type {number}
    */
@@ -68,3 +70,5 @@ export class BankAccount {
     throwNotImplementedError();
   }
 }
+
+module.exports = { BankAccount };

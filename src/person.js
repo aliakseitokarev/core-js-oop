@@ -1,6 +1,8 @@
-import { throwNotImplementedError } from '../utils/throw-not-implemented-error.js';
+const {
+  throwNotImplementedError,
+} = require('../utils/throw-not-implemented-error.js');
 
-export class Person {
+class Person {
   /**
    * @public
    * @static
@@ -114,3 +116,5 @@ export class Person {
     throwNotImplementedError();
   }
 }
+
+module.exports = { Person };

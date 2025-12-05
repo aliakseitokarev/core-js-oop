@@ -1,4 +1,6 @@
-import { throwNotImplementedError } from '../utils/throw-not-implemented-error.js';
+const {
+  throwNotImplementedError,
+} = require('../utils/throw-not-implemented-error.js');
 
 /**
  * @abstract
@@ -6,7 +8,7 @@ import { throwNotImplementedError } from '../utils/throw-not-implemented-error.j
  * Represents any animal.
  * Do not modify this class.
  */
-export class Animal {
+class Animal {
   /**
    * Basic class constructor.
    * Cannot be invoked without inheritance.
@@ -41,18 +43,17 @@ export class Animal {
  * Must correctly extend Animal.
  * Sound: "Woof"
  */
-export class Dog {
-  // Remove this constructor once the class is implemented
-  constructor() {
-    throwNotImplementedError();
-  }
+class Dog extends Animal {
+  // makeSound() {
+  //   return 'Woof';
+  // }
 }
 
 /**
  * Must correctly extend Animal.
  * Sound: "Meow"
  */
-export class Cat {
+class Cat {
   // Remove this constructor once the class is implemented
   constructor() {
     throwNotImplementedError();
@@ -63,9 +64,11 @@ export class Cat {
  * Must correctly extend Animal.
  * Sound: "Moo"
  */
-export class Cow {
+class Cow {
   // Remove this constructor once the class is implemented
   constructor() {
     throwNotImplementedError();
   }
 }
+
+module.exports = { Animal, Dog, Cat, Cow };

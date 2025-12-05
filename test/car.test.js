@@ -1,9 +1,9 @@
-import { describe, it } from 'mocha';
-import assert from 'node:assert';
+const { describe, it } = require('mocha');
+const assert = require('node:assert');
 
-import { Car, Engine } from '../src/car.js';
-import { assertNoComments } from '../utils/assert-no-comments.js';
-import { optional } from '../utils/optional.js';
+const { Car, Engine } = require('../src/car.js');
+const { assertNoComments } = require('../utils/assert-no-comments.js');
+const { optional } = require('../utils/optional.js');
 
 it.optional = optional;
 
